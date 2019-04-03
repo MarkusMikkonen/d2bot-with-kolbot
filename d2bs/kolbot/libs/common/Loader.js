@@ -101,6 +101,7 @@ var Loader = {
 						}
 
 						if (isIncluded("bots/" + i + ".js")) {
+							var startTime = new Date();
 							try {
 								reconfiguration = typeof Scripts[i] === 'object';
 
@@ -135,6 +136,9 @@ var Loader = {
 								Misc.errorReport(error, i);
 							}
 						}
+					var endTime = new Date();
+					var elapsed = Math.floor((endTime - startTime) / 1000);
+					print("ÿc2Script run time: ÿc9" + i + " - " + elapsed + " seconds.")
 					}
 				} else {
 					Misc.errorReport("ÿc1Script " + i + " doesn't exist.");
